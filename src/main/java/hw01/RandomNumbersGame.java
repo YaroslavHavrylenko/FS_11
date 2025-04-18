@@ -5,6 +5,11 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class RandomNumbersGame {
+
+  public static boolean isNumber(String str) {
+    return str.matches("-?\\d+");
+  };
+
   public static void main(String[] args) {
     PrintStream so = System.out;
     so.println("---Let the game begin!---");
@@ -17,9 +22,16 @@ public class RandomNumbersGame {
     int randomNumber = (int) rn;
     int yourVariant;
     do {
-      so.print("Enter number from 0 to 100, please: ");
-      Scanner scannerNumber = new Scanner(in);
-      String inputNumber = scannerNumber.nextLine();
+      boolean checking;
+      String inputNumber;
+      do {
+        so.print("Enter number from 0 to 100, please: ");
+        Scanner scannerNumber = new Scanner(in);
+        inputNumber = scannerNumber.nextLine();
+        checking = isNumber(inputNumber);
+        if (!checking) so.println("Your input is NaN. Please be attentive!");
+      } while (!checking);
+
       yourVariant = Integer.parseInt(inputNumber);
       if (yourVariant < randomNumber) {
         so.println("Your number is too small. Please, try again.");
