@@ -56,11 +56,7 @@ public class Family {
         Human[] withoutChild = new Human[this.children.length - 1];
         int n = 0;
         for (int i = 0; i <this.children.length; i++){
-            if (this.children[i].equals(child)) {
-                withoutChild[n] = this.children[++i];
-            } else {
-                withoutChild[n] = this.children[i];
-            }
+            if (!this.children[i].equals(child)) { withoutChild[n] = this.children[i]; }
             n++;
         }
         this.children = withoutChild;
