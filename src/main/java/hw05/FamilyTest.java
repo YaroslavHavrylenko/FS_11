@@ -76,4 +76,18 @@ public class FamilyTest {
         assertEquals(2, realChildren1.length);
         assertEquals(child1, family.getChildren()[1]);
     }
+
+    @Test
+    public void testCountFamily () {
+        Human mother = new Human("Jane", "Karleone", 1954);
+        Human father = new Human("Vito", "Karleone", 1954);
+        Human child = new Human("Michael", "Karleone", 1977);
+        Family family = new Family(mother, father);
+        family.addChild(child);
+        assertEquals(3, family.countFamily());
+
+        Human child1 = new Human("Stiven", "Karleone",1978);
+        family.addChild(child1);
+        assertEquals(4, family.countFamily());
+    }
 }
