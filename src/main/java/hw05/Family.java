@@ -1,6 +1,7 @@
-package hw04;
+package hw05;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Family {
     private Human mother;
@@ -63,8 +64,9 @@ public class Family {
         Human[] withoutChild = new Human[this.children.length - 1];
         int n = 0;
         for (int i = 0; i <this.children.length; i++){
-            if (!this.children[i].equals(child) || this.children[i].hashCode() != child.hashCode()) { withoutChild[n] = this.children[i]; }
-            n++;
+            if (!this.children[i].equals(child)) {
+                withoutChild[n] = this.children[i];
+                n++; }
         }
         this.children = withoutChild;
         return this.children;
@@ -75,8 +77,8 @@ public class Family {
             Human[] withoutChild = new Human[this.children.length - 1];
             int n = 0;
             for (int i = 0; i <this.children.length; i++) {
-                if (i != index) { withoutChild[n] = this.children[i]; }
-                n++;
+                if (i != index) { withoutChild[n] = this.children[i]; n++;}
+
             }
             this.children = withoutChild;
             System.out.printf("Child with index %d was deleted\n", index);
@@ -102,9 +104,4 @@ public class Family {
                 ((pet == null) ? ", pet = No pet at family" : ", pet=" + pet.toString()) +
                 '}';
     };
-
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Object deleted - ".concat(this.toString()));
-    }
 }
