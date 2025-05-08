@@ -2,6 +2,8 @@ package hw05;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FamilyTest {
@@ -26,7 +28,7 @@ public class FamilyTest {
         family.deleteChild(child);
         Human[] expChildren = new Human[]{child1};
         Human[] realChildren = family.getChildren();
-        assertEquals(expChildren, realChildren);
+        assertArrayEquals(expChildren, realChildren);
     }
 
     @Test
@@ -41,7 +43,7 @@ public class FamilyTest {
         family.deleteChild(0);
         Human[] expChildren = new Human[]{child1};
         Human[] realChildren = family.getChildren();
-        assertEquals(expChildren, realChildren);
+        assertArrayEquals(expChildren, realChildren);
     }
 
     @Test
@@ -56,7 +58,7 @@ public class FamilyTest {
         family.deleteChild(5);
         Human[] expChildren = new Human[]{child,child1};
         Human[] realChildren = family.getChildren();
-        assertEquals(expChildren, realChildren);
+        assertArrayEquals(expChildren, realChildren);
     }
 
     @Test
@@ -73,6 +75,7 @@ public class FamilyTest {
         Human child1 = new Human("Stiven", "Karleone",1978);
         family.addChild(child1);
         Human[] realChildren1 = family.getChildren();
+
         assertEquals(2, realChildren1.length);
         assertEquals(child1, family.getChildren()[1]);
     }
