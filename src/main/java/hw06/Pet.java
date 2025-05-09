@@ -1,6 +1,6 @@
 package hw06;
 
-import java.util.Arrays;
+import hw06.Pets.Species;
 
 public abstract class Pet {
     private Species species;
@@ -59,16 +59,6 @@ public abstract class Pet {
         System.out.println("Я їм!");
     };
     public abstract void respond();
-
-    @Override
-    public String toString() {
-        return species + "{" +
-                "nickname='" + nickname + '\'' +
-                ", age=" + age +
-                ", trickLevel=" + trickLevel +
-                ", habits=" + Arrays.toString(habits) +
-                '}';
-    };
 
     @Override
     protected void finalize() throws Throwable {

@@ -1,4 +1,4 @@
-package hw06;
+package hw06.Pets;
 
 public enum Species {
     DOG ("Dog"),
@@ -9,10 +9,7 @@ public enum Species {
 
     private final String species;
 
-
-    Species (String species) {
-        this.species = species;
-    };
+    Species (String species) { this.species = (species == null) ? "Unknown" : species; }
 
     public String getSpecies() {
         return species;

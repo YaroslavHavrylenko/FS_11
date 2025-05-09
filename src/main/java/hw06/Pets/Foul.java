@@ -1,4 +1,4 @@
-package hw06.Pet;
+package hw06.Pets;
 
 public interface Foul {
     void foul ();
