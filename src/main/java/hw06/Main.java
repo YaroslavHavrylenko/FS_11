@@ -59,8 +59,16 @@ public class Main {
         Man father2 = new Man("John", "Conor", 1977);
         Pet cat2 = new DomesticCat("Cezar");
         mother2.greetPet(cat2);
+        father2.greetPet(cat2);
         mother2.makeUp();
         father2.repairCar();
+        Dog dog2 = new Dog("Rex", 2, 54, new String[]{"run","walk", "eat"});
+        dog2.respond();
+        dog2.foul();
+        DomesticCat cat3 = new DomesticCat("Pusha", 7, 78, new String[]{"sleep", "eat", "myau"});
+        cat3.respond();
+        cat3.foul();
+        cat3.eat();
 
 
     }
