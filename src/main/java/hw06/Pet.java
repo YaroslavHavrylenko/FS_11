@@ -1,9 +1,7 @@
 package hw06;
 
-import hw06.Pets.Species;
 
 public abstract class Pet {
-    private Species species;
     private String nickname;
     private int age;
     private int trickLevel;
@@ -19,13 +17,6 @@ public abstract class Pet {
         this.habits = habits;
     };
     public Pet () {};
-
-    public void setSpecies(Species species) {
-        this.species = species;
-    };
-    public Species getSpecies() {
-        return species;
-    };
 
     public void setNickname(String nickname) {
         this.nickname = (nickname.length() < 2) ? "Nickname not correct" :nickname;
