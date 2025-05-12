@@ -3,7 +3,7 @@ package hw06.HumanType;
 import hw06.Human;
 import hw06.Pet;
 
-public class Man extends Human {
+public final class Man extends Human {
     public Man (String name, String surname, int year) {
         super(name, surname, year);
     }
