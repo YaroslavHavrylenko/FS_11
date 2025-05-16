@@ -14,7 +14,12 @@ public final class Woman extends Human {
 
     public Woman (String name, String surname, long birthDate , int iq, HashMap<DayOfWeek, Task> schedule) {
         super(name, surname, birthDate , iq, schedule);
-    };
+    }
+
+    public Woman (String name, String surname, long birthDate , int iq) {
+        super(name, surname, birthDate, iq);
+    }
+
     public Woman () {};
 
     public void makeUp (){

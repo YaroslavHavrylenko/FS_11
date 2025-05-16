@@ -1,40 +1,19 @@
 package hw08;
 
+import hw07.TransformTime;
 import hw08.HumanType.Man;
 import hw08.HumanType.Woman;
 import hw08.Pets.Dog;
 import hw08.Pets.DomesticCat;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.ZoneId;
+import java.time.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 
+import static hw07.TransformTime.toMilliSec;
+
 public class Main {
-    public static long toMilliSec (LocalDate birthDay) {
-        return birthDay
-                .atStartOfDay(ZoneId.of("UTC"))
-                .toInstant()
-                .toEpochMilli();
-    }
-
-    public static LocalDate fromBirthdayToNow(long birthDay) {
-        long now = LocalDate
-                .now()
-                .atStartOfDay(ZoneId.of("UTC"))
-                .toInstant()
-                .toEpochMilli();
-        long fromBirthdayToNow = now - birthDay;
-
-        LocalDate difference =
-
-        return Instant.ofEpochMilli(fromBirthdayToNow)
-                .atZone(ZoneId.of("UTC"))
-                .toLocalDate();
-    }
 
     public static void main(String[] args) {
         long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
@@ -117,8 +96,21 @@ public class Main {
         cat3.eat();
 
         System.out.println("--------------- HW-7 ---------------");
-//        System.out.printf("Mother years = %d, month = %d, days = %d\n", fromBirthdayToNow(motherBirthDay).getYear(), fromBirthdayToNow(motherBirthDay).getMonthValue(),fromBirthdayToNow(motherBirthDay).);
+        System.out.println("Family 1");
+        mother.describeAge(motherBirthDay);
+        father.describeAge(fatherBirthDay);
+        child.describeAge(child1BirthDay);
 
-
+        System.out.println("Family 2");
+        mother1.describeAge(mother1BirthDay);
+        father1.describeAge(father1BirthDay);
+        child1.describeAge(child1BirthDay);
+        System.out.println("Adopted children");
+        long adoptedChildren1Birthday = toMilliSec(LocalDate.of(1980,10,7));
+        Man adoptedChildren1 = new Man ("Simon", "Willis",adoptedChildren1Birthday,80);
+        System.out.println(adoptedChildren1);
+        long adoptedChildren2Birthday = toMilliSec(LocalDate.of(1985,12,23));
+        Woman adoptedChildren2 = new Woman("Jane", "Smith", adoptedChildren2Birthday, 87);
+        System.out.println(adoptedChildren2);
     }
 }

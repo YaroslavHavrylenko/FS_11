@@ -1,7 +1,13 @@
 package hw08;
 
+import hw07.TransformTime;
+
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.HashMap;
 import java.util.Objects;
+
+import static hw07.TransformTime.dateToString;
 
 public abstract class Human {
     private String name;
@@ -24,6 +30,14 @@ public abstract class Human {
         this.iq = iq;
         this.schedule = schedule;
     }
+        // конструктор для усиновлених дітей
+    public Human (String name, String surname, long birthDate, int iq) {
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.iq = iq;
+    }
+
     public Human () {}
 
     public void setName(String name) {
@@ -68,14 +82,18 @@ public abstract class Human {
         System.out.printf("Hello, %s", pet.getNickname());
     }
 
-    public void describeAge (long birthDate) {}
+    public void describeAge (long birthDate) {
+        LocalDate now = LocalDate.now();
+        Period age = Period.between(TransformTime.toLocalDate(birthDate),now);
+        System.out.printf("%s %s has %d years %d months %d days\n", this.name, this.surname, age.getYears(), age.getMonths(), age.getDays());
+    }
 
     @Override
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + birthDate  +
+                ", birthDate=" + dateToString(birthDate)  +
                 ((iq != 0) ? ", iq=" + iq : "") +
                 ((family == null || family.getMother() == null) ? "" : ", mother = " + (family.getMother().getName() + " " + family.getMother().getSurname())) +
                 ((family == null || family.getFather() == null) ? "" : ", father=" + (family.getFather().getName() + " " + family.getFather().getSurname())) +
