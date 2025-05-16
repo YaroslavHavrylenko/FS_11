@@ -1,6 +1,5 @@
 package hw08;
 
-import hw07.TransformTime;
 import hw08.HumanType.Man;
 import hw08.HumanType.Woman;
 import hw08.Pets.Dog;
@@ -11,7 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 
-import static hw07.TransformTime.toMilliSec;
+import static hw08.TransformTime.toMilliSec;
 
 public class Main {
 
@@ -96,16 +95,16 @@ public class Main {
         cat3.eat();
 
         System.out.println("--------------- HW-7 ---------------");
-        System.out.println("Family 1");
+        System.out.println("---Family 1---");
         mother.describeAge(motherBirthDay);
         father.describeAge(fatherBirthDay);
         child.describeAge(child1BirthDay);
 
-        System.out.println("Family 2");
+        System.out.println("---Family 2---");
         mother1.describeAge(mother1BirthDay);
         father1.describeAge(father1BirthDay);
         child1.describeAge(child1BirthDay);
-        System.out.println("Adopted children");
+        System.out.println("---Adopted children---");
         long adoptedChildren1Birthday = toMilliSec(LocalDate.of(1980,10,7));
         Man adoptedChildren1 = new Man ("Simon", "Willis",adoptedChildren1Birthday,80);
         System.out.println(adoptedChildren1);

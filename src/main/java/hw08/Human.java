@@ -1,13 +1,11 @@
 package hw08;
 
-import hw07.TransformTime;
-
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.HashMap;
 import java.util.Objects;
 
-import static hw07.TransformTime.dateToString;
+import static hw08.TransformTime.dateToString;
 
 public abstract class Human {
     private String name;
