@@ -1,4 +1,4 @@
-package hw10;
+package hw12;
 
 public enum DayOfWeek {
     SUNDAY ("Sunday"),

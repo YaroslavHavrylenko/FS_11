@@ -1,37 +1,43 @@
-package hw10.Pets;
+package hw12.Pets;
 
-import hw10.Pet;
+import hw12.Pet;
 
 import java.util.LinkedHashSet;
 
-public class Fish extends Pet {
+public class DomesticCat extends Pet implements Foul {
     private Species species;
 
-
-    public Fish (String nickname){
+    public DomesticCat(String nickname) {
         super(nickname);
-        this.species = Species.FISH;
+        this.species = Species.DOMESTICCAT;
     }
 
-    public Fish (String nickname, int age, int trickLevel, LinkedHashSet<String> habits) {
+    public DomesticCat(String nickname, int age, int trickLevel, LinkedHashSet<String> habits) {
         super(nickname, age, trickLevel, habits);
-        this.species = Species.FISH;
+        this.species = Species.DOMESTICCAT;
 
     }
-    public Fish () {
-        this.species = Species.FISH;
+
+    public DomesticCat() {
+        this.species = Species.DOMESTICCAT;
     }
 
     public void setSpecies(Species species) {
         this.species = species;
     }
+
     public Species getSpecies() {
         return species;
     }
 
     @Override
     public void respond() {
-        System.out.println("Риби не можуть говорити");
+        System.out.printf("Привіт, хазяїн. Я - %s, Домашній кіт. Мяу!!!\n", this.getNickname());
+    }
+
+    @Override
+    public void foul() {
+        System.out.println("Потрібно добре замести сліди...)");
     }
 
     @Override

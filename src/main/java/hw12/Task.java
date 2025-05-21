@@ -1,4 +1,4 @@
-package hw10;
+package hw12;
 
 public enum Task {
     TASK1 ("Task 1"),

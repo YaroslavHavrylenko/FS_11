@@ -1,4 +1,4 @@
-package hw10.Pets;
+package hw12.Pets;
 
 public enum Species {
     DOG ("Dog"),

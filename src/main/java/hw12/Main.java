@@ -1,9 +1,9 @@
-package hw10;
+package hw12;
 
-import hw10.HumanType.Man;
-import hw10.HumanType.Woman;
-import hw10.Pets.Dog;
-import hw10.Pets.DomesticCat;
+import hw12.HumanType.Man;
+import hw12.HumanType.Woman;
+import hw12.Pets.Dog;
+import hw12.Pets.DomesticCat;
 
 import java.time.LocalDate;
 import java.util.Arrays;

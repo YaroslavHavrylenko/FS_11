@@ -1,6 +1,6 @@
-package hw10.Pets;
+package hw12.Pets;
 
-import hw10.Pet;
+import hw12.Pet;
 
 import java.util.LinkedHashSet;
 

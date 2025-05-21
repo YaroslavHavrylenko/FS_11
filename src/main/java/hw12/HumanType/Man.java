@@ -1,9 +1,9 @@
-package hw10.HumanType;
+package hw12.HumanType;
 
-import hw10.DayOfWeek;
-import hw10.Human;
-import hw10.Pet;
-import hw10.Task;
+import hw12.DayOfWeek;
+import hw12.Human;
+import hw12.Pet;
+import hw12.Task;
 
 import java.util.HashMap;
 

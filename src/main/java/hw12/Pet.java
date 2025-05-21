@@ -1,4 +1,4 @@
-package hw10;
+package hw12;
 
 import java.util.LinkedHashSet;
 
