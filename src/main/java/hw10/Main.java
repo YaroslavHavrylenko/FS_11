@@ -105,11 +105,9 @@ public class Main {
         father1.describeAge(father1BirthDay);
         child1.describeAge(child1BirthDay);
         System.out.println("---Adopted children---");
-        long adoptedChildren1Birthday = toMilliSec(LocalDate.of(1980,10,7));
-        Man adoptedChildren1 = new Man("Simon", "Willis",adoptedChildren1Birthday,80);
+        Man adoptedChildren1 = new Man("Simon", "Willis", "07/10/1980",80);
         System.out.println(adoptedChildren1);
-        long adoptedChildren2Birthday = toMilliSec(LocalDate.of(1985,12,23));
-        Woman adoptedChildren2 = new Woman("Jane", "Smith", adoptedChildren2Birthday, 87);
+        Woman adoptedChildren2 = new Woman("Jane", "Smith", "23/12/1985", 87);
         System.out.println(adoptedChildren2);
     }
 }

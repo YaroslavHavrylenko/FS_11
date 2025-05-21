@@ -19,6 +19,10 @@ public final class Man extends Human {
     public Man (String name, String surname, long birthDate , int iq) {
         super(name, surname, birthDate, iq);
     }
+    public Man (String name, String surname, String birthDate , int iq) {
+        super(name, surname, birthDate, iq);
+    }
+
     public Man () {};
 
     public void repairCar () {

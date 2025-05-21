@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 import static hw08.TransformTime.dateToString;
+import static hw08.TransformTime.stringToLong;
 
 public abstract class Human {
     private String name;
@@ -35,6 +36,14 @@ public abstract class Human {
         this.birthDate = birthDate;
         this.iq = iq;
     }
+
+    public Human (String name, String surname, String birthDateAdoptedChildren, int iq) {
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = stringToLong(birthDateAdoptedChildren);
+        this.iq = iq;
+    }
+
 
     public Human () {}
 

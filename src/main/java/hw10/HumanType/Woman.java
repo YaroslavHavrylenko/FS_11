@@ -20,6 +20,10 @@ public final class Woman extends Human {
         super(name, surname, birthDate, iq);
     }
 
+    public Woman (String name, String surname, String birthDate , int iq) {
+        super(name, surname, birthDate, iq);
+    }
+
     public Woman () {};
 
     public void makeUp (){
