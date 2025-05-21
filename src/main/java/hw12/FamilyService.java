@@ -3,30 +3,30 @@ package hw12;
 import java.util.List;
 
 public class FamilyService {
-    public FamilyDao service = new FamilyDao() {
+    public CollectionFamilyDao service = new CollectionFamilyDao() {
         @Override
         public List<Family> getAllFamilies() {
-            return List.of();
+            return service.getAllFamilies();
         }
 
         @Override
         public Family getFamilyByIndex(int index) {
-            return null;
+            return service.getFamilyByIndex(index);
         }
 
         @Override
         public Boolean deleteFamily(int index) {
-            return null;
+            return service.deleteFamily(index);
         }
 
         @Override
         public Boolean deleteFamily(Family family) {
-            return null;
+            return service.deleteFamily(family);
         }
 
         @Override
         public void saveFamily(Family family) {
-
+            service.saveFamily(family);
         }
     };
 }
