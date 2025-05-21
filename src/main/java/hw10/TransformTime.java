@@ -1,4 +1,4 @@
-package hw08;
+package hw10;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -22,9 +22,6 @@ public final class TransformTime {
     public static String dateToString (long date) {
         LocalDate localDate = toLocalDate(date);
         return localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    }
 
-    public  static long stringToLong (String date) {
-        return toMilliSec(LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
     }
 }

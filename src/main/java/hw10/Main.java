@@ -1,11 +1,11 @@
-package hw08;
+package hw10;
 
-import hw08.HumanType.Man;
-import hw08.HumanType.Woman;
-import hw08.Pets.Dog;
-import hw08.Pets.DomesticCat;
+import hw10.HumanType.Man;
+import hw10.HumanType.Woman;
+import hw10.Pets.Dog;
+import hw10.Pets.DomesticCat;
 
-import java.time.*;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -105,9 +105,11 @@ public class Main {
         father1.describeAge(father1BirthDay);
         child1.describeAge(child1BirthDay);
         System.out.println("---Adopted children---");
-        Man adoptedChildren1 = new Man ("Simon", "Willis", "07/10/1980",80);
+        long adoptedChildren1Birthday = toMilliSec(LocalDate.of(1980,10,7));
+        Man adoptedChildren1 = new Man("Simon", "Willis",adoptedChildren1Birthday,80);
         System.out.println(adoptedChildren1);
-        Woman adoptedChildren2 = new Woman("Jane", "Smith", "23/12/1985", 87);
+        long adoptedChildren2Birthday = toMilliSec(LocalDate.of(1985,12,23));
+        Woman adoptedChildren2 = new Woman("Jane", "Smith", adoptedChildren2Birthday, 87);
         System.out.println(adoptedChildren2);
     }
 }
