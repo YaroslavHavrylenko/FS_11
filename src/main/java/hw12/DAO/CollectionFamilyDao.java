@@ -1,4 +1,6 @@
-package hw12;
+package hw12.DAO;
+
+import hw12.Family;
 
 import java.util.ArrayList;
 import java.util.List;
