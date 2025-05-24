@@ -191,9 +191,6 @@ public class Main {
 
         Menu.showMenu();
 
-
-
-
         do{
             System.out.print("Будь-ласка виберіть пункт меню: ");
             menuChoice = scanner.nextLine();
@@ -210,12 +207,15 @@ public class Main {
                         break;
                     case "3":
                         MenuThree.runMenuThree();
+                        Menu.showMenu();
                         break;
                     case "4":
                         MenuFour.runMenuFour();
+                        Menu.showMenu();
                         break;
                     case "5":
                         MenuFive.runMenuFive();
+                        Menu.showMenu();
                         break;
                     case "6":
 
@@ -229,6 +229,10 @@ public class Main {
                     case "9":
 
                         break;
+                    case "exit":
+                        break;
+                    default:
+                        System.out.println("Ви ввели невірний номер меню! Будь-ласка введіть уважно!");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Ведено не число");
