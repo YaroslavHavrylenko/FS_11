@@ -1,9 +1,9 @@
-package hw09;
+package hw10;
 
-import hw09.Controller.FamilyController;
-import hw09.HumanType.Man;
-import hw09.HumanType.Woman;
-import hw09.Pets.Dog;
+import hw10.Controller.FamilyController;
+import hw10.HumanType.Man;
+import hw10.HumanType.Woman;
+import hw10.Pets.Dog;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -109,7 +109,46 @@ public class Main {
 //        Woman adoptedChildren2 = new Woman("Jane", "Smith", "23/12/1985", 87);
 //        System.out.println(adoptedChildren2);
 
-        System.out.println("--------------- HW-9 ---------------");
+//        System.out.println("--------------- HW-12 ---------------");
+//        long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
+//        Woman mother = new Woman("Jane", "Karleone", motherBirthDay);
+//        long fatherBirthDay = toMilliSec(LocalDate.of(1954,5,15));
+//        Man father = new Man("Vito", "Karleone", fatherBirthDay);
+//        long childBirthDay = toMilliSec(LocalDate.of(1977,12,23));
+//        Man child = new Man("Michael", "Karleone", childBirthDay);
+//
+//        long mother1BirthDay = toMilliSec(LocalDate.of(1980,5,28));
+//        Woman mother1 = new Woman("Jane", "Karleone", mother1BirthDay);
+//        long father1BirthDay = toMilliSec(LocalDate.of(1978,12,15));
+//        Man father1 = new Man("Vito", "Karleone", father1BirthDay);
+//        long child1BirthDay = toMilliSec(LocalDate.of(2015,2,2));
+//        Man child1 = new Man("Michael", "Karleone", child1BirthDay);
+//
+//        Dog dog = new Dog("Rock", 5, 75, new LinkedHashSet<>(Arrays.asList("eat", "drink", "sleep")));
+//        FamilyController familyController = new FamilyController();
+//        familyController.createNewFamily(mother, father);
+//        familyController.displayAllFamilies();
+//        familyController.createNewFamily(mother1, father1);
+//        familyController.displayAllFamilies();
+//        familyController.bornChild(familyController.getFamilyById(0), "Erik", "Elsa");
+//        familyController.getFamiliesBiggerThan(1);
+//        familyController.getFamiliesLessThan(3);
+//        familyController.countFamiliesWithMemberNumber(2);
+//        familyController.bornChild(familyController.getFamilyById(0), "Erik", "Elsa");
+//        familyController.adoptChild(familyController.getFamilyById(1), child);
+//        familyController.adoptChild(familyController.getFamilyById(1), child1);
+//        familyController.displayAllFamilies();
+//        familyController.deleteAllChildrenOlderThen(30);
+//        familyController.displayAllFamilies();
+//        familyController.count();
+//        familyController.addPet(0, dog);
+//        familyController.displayAllFamilies();
+//        familyController.getPets(0);
+//        familyController.getFamilyById(0);
+//        familyController.deleteFamilyByIndex(0);
+//        familyController.deleteFamily(familyController.getFamilyById(0));
+
+        System.out.println("--------------- HW-10 ---------------");
         long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
         Woman mother = new Woman("Jane", "Karleone", motherBirthDay);
         long fatherBirthDay = toMilliSec(LocalDate.of(1954,5,15));
@@ -118,9 +157,9 @@ public class Main {
         Man child = new Man("Michael", "Karleone", childBirthDay);
 
         long mother1BirthDay = toMilliSec(LocalDate.of(1980,5,28));
-        Woman mother1 = new Woman("Jane", "Karleone", mother1BirthDay);
+        Woman mother1 = new Woman("Alice", "Smith", mother1BirthDay);
         long father1BirthDay = toMilliSec(LocalDate.of(1978,12,15));
-        Man father1 = new Man("Vito", "Karleone", father1BirthDay);
+        Man father1 = new Man("Will", "Smith", father1BirthDay);
         long child1BirthDay = toMilliSec(LocalDate.of(2015,2,2));
         Man child1 = new Man("Michael", "Karleone", child1BirthDay);
 
@@ -129,23 +168,9 @@ public class Main {
         familyController.createNewFamily(mother, father);
         familyController.displayAllFamilies();
         familyController.createNewFamily(mother1, father1);
+        familyController.bornChild(familyController.getFamilyById(1), "Erik", "Elsa");
+        long bornChildBirthDay = toMilliSec(LocalDate.of(2015,2,2));
+        familyController.getFamilyById(1).getChildren().get(0).setBirthDate(bornChildBirthDay);
         familyController.displayAllFamilies();
-        familyController.bornChild(familyController.getFamilyById(0), "Erik", "Elsa");
-        familyController.getFamiliesBiggerThan(1);
-        familyController.getFamiliesLessThan(3);
-        familyController.countFamiliesWithMemberNumber(2);
-        familyController.bornChild(familyController.getFamilyById(0), "Erik", "Elsa");
-        familyController.adoptChild(familyController.getFamilyById(1), child);
-        familyController.adoptChild(familyController.getFamilyById(1), child1);
-        familyController.displayAllFamilies();
-        familyController.deleteAllChildrenOlderThen(30);
-        familyController.displayAllFamilies();
-        familyController.count();
-        familyController.addPet(0, dog);
-        familyController.displayAllFamilies();
-        familyController.getPets(0);
-        familyController.getFamilyById(0);
-        familyController.deleteFamilyByIndex(0);
-        familyController.deleteFamily(familyController.getFamilyById(0));
     }
 }
