@@ -217,6 +217,18 @@ public class Main {
                     case "5":
                         MenuFive.runMenuFive();
                         break;
+                    case "6":
+
+                        break;
+                    case "7":
+
+                        break;
+                    case "8":
+
+                        break;
+                    case "9":
+
+                        break;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Ведено не число");
