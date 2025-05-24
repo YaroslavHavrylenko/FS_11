@@ -96,10 +96,10 @@ public class FamilyService {
 
     public void deleteAllChildrenOlderThen(int age) {
         getAllFamilies().forEach(family -> {
-            List<Human> childrenToRemove = family.getChildren().stream()
+            List<Human> childrenToRemoveFromFamily = family.getChildren().stream()
                     .filter(child -> LocalDate.now().getYear() - child.getYear() > age)
                     .collect(Collectors.toList());
-            childrenToRemove.forEach(family::deleteChild);
+            childrenToRemoveFromFamily.forEach(family::deleteChild);
             service.saveFamily(family);
         });
     }
