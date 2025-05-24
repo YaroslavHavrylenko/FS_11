@@ -168,7 +168,7 @@ public class Main {
         familyController.createNewFamily(mother, father);
         familyController.displayAllFamilies();
         familyController.createNewFamily(mother1, father1);
-        familyController.bornChild(familyController.getFamilyById(1), "Erik", "Elsa");
+        familyController.bornChild(familyController.getFamilyById(1), "Elsa", "Erik");
         long bornChildBirthDay = toMilliSec(LocalDate.of(2015,2,2));
         familyController.getFamilyById(1).getChildren().get(0).setBirthDate(bornChildBirthDay);
         familyController.displayAllFamilies();

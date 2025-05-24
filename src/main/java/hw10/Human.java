@@ -108,15 +108,16 @@ public abstract class Human {
     }
 
     public String prettyFormat() {
+        String str = "{name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthDate=" + dateToString(birthDate) +
+                ((iq != 0) ? ", iq=" + iq : "") +
+                ((schedule == null || schedule.isEmpty()) ? "" : ", schedule=" + schedule) +
+                '}';
         if (family != null && !family.getChildren().contains(this)) {
-            return "{name='" + name + '\'' +
-                            ", surname='" + surname + '\'' +
-                            ", birthDate=" + dateToString(birthDate) +
-                            ((iq != 0) ? ", iq=" + iq : "") +
-                            ((schedule == null || schedule.isEmpty()) ? "" : ", schedule=" + schedule) +
-                            '}';
+            return str;
         } else {
-            return (this instanceof Man) ? "" : "girl";
+            return (this instanceof Man) ? "boy: " + str : "girl: " + str;
 
         }
 

@@ -2,6 +2,7 @@ package hw10;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.stream.Collectors;
 
 public class Family {
     private Human mother;
@@ -92,7 +93,9 @@ public class Family {
         return "family:\n" +
                 "  mother: " + mother.toString() +
                 ",\n  father: " + father.toString() +
-                ((children.isEmpty()) ? ",\n children: No info about children" : ",\n  children:\n    " + children) +
+                ((children.isEmpty()) ? ",\n  children: No info about children" : ",\n  children:\n    " + children.stream()
+                        .map(Human::prettyFormat)
+                        .collect(Collectors.joining("\n    "))) +
                 ((pet == null) ? ",\n  pet: No pet at family" : ", pet: " + pet) ;
     }
 }
