@@ -14,6 +14,11 @@ public class Dog extends Pet implements Foul {
         this.species = Species.DOG;
     }
 
+    public Dog (String nickname, int age, int trickLevel) {
+        super(nickname, age, trickLevel);
+
+    }
+
     public Dog (String nickname, int age, int trickLevel, LinkedHashSet<String> habits) {
         super(nickname, age, trickLevel, habits);
         this.species = Species.DOG;

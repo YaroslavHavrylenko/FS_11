@@ -12,10 +12,14 @@ public class DomesticCat extends Pet implements Foul {
         this.species = Species.DOMESTICCAT;
     }
 
+    public DomesticCat(String nickname, int age, int trickLevel) {
+        super(nickname, age, trickLevel);
+        this.species = Species.DOMESTICCAT;
+    }
+
     public DomesticCat(String nickname, int age, int trickLevel, LinkedHashSet<String> habits) {
         super(nickname, age, trickLevel, habits);
         this.species = Species.DOMESTICCAT;
-
     }
 
     public DomesticCat() {
