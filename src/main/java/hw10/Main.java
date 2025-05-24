@@ -3,15 +3,21 @@ package hw10;
 import hw10.Controller.FamilyController;
 import hw10.HumanType.Man;
 import hw10.HumanType.Woman;
+import hw10.Menu.*;
 import hw10.Pets.Dog;
+import hw10.Pets.DomesticCat;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.Scanner;
 
 import static hw08.TransformTime.toMilliSec;
+import static hw10.Menu.MenuOne.runMenuOne;
 
 public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+    public static String menuChoice;
 
     public static void main(String[] args) {
 //        long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
@@ -160,10 +166,11 @@ public class Main {
         Woman mother1 = new Woman("Alice", "Smith", mother1BirthDay);
         long father1BirthDay = toMilliSec(LocalDate.of(1978,12,15));
         Man father1 = new Man("Will", "Smith", father1BirthDay);
-        long child1BirthDay = toMilliSec(LocalDate.of(2015,2,2));
-        Man child1 = new Man("Michael", "Karleone", child1BirthDay);
 
         Dog dog = new Dog("Rock", 5, 75, new LinkedHashSet<>(Arrays.asList("eat", "drink", "sleep")));
+        DomesticCat cat = new DomesticCat("Kisa", 3, 50, new LinkedHashSet<>(Arrays.asList("eat", "walk", "foul")));
+
+
         FamilyController familyController = new FamilyController();
         familyController.createNewFamily(mother, father);
         familyController.displayAllFamilies();
@@ -172,5 +179,52 @@ public class Main {
         long bornChildBirthDay = toMilliSec(LocalDate.of(2015,2,2));
         familyController.getFamilyById(1).getChildren().get(0).setBirthDate(bornChildBirthDay);
         familyController.displayAllFamilies();
+
+        familyController.adoptChild(familyController.getFamilyById(1), child);
+        familyController.addPet(1,dog);
+        familyController.addPet(1, cat);
+        familyController.displayAllFamilies();
+        familyController.getFamiliesBiggerThan(3);
+        familyController.getFamiliesLessThan(3);
+        familyController.deleteFamilyByIndex(0);
+        familyController.displayAllFamilies();
+
+        Menu.showMenu();
+
+
+
+
+        do{
+            System.out.print("Будь-ласка виберіть пункт меню: ");
+            menuChoice = scanner.nextLine();
+            try {
+//                int num = Integer.parseInt(String.valueOf(menuChoice));
+                switch (menuChoice.trim()){
+                    case "1":
+                        MenuOne.runMenuOne();
+                        Menu.showMenu();
+                        break;
+                    case "2":
+                        MenuTwo.runMenuTwo();
+                        Menu.showMenu();
+                        break;
+                    case "3":
+                        MenuThree.runMenuThree();
+                        break;
+                    case "4":
+                        MenuFour.runMenuFour();
+                        break;
+                    case "5":
+                        MenuFive.runMenuFive();
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Ведено не число");
+            }
+        } while (!menuChoice.equalsIgnoreCase("exit"));
+
+
+
+
     }
 }

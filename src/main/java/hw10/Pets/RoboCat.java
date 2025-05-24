@@ -31,5 +31,23 @@ public class RoboCat extends Pet {
     @Override
     public void respond(){
         System.out.printf("Привіт, хазяїн. Я - %s, кіт-робот. Мя-у, мя-у!!!\n", this.getNickname());
-    };
+    }
+
+    @Override
+    public String toString() {
+        return this.getSpecies() + "{" +
+                "nickname='" + super.getNickname() + '\'' +
+                ", age=" + super.getAge() +
+                ", trickLevel=" + super.getTrickLevel() +
+                ", habits=" + super.getHabits() +
+                '}';
+    }
+
+    public String prettyFormat() {
+        return this.species + ":" +
+                " nickname='" + super.getNickname() + '\'' +
+                ", age=" + super.getAge() +
+                ", trickLevel=" + super.getTrickLevel() +
+                ", habits=" + super.getHabits();
+    }
 }

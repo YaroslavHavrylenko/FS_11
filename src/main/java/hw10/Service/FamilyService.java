@@ -35,20 +35,20 @@ public class FamilyService {
 
         public List<Family> getFamiliesBiggerThan (int familySize){
             System.out.printf("Families bigger then %d :\n", familySize);
-            List<Family> familiesBiggerThan = new ArrayList<>();
+            List<Family> familiesBiggerThan;
             familiesBiggerThan = getAllFamilies().stream()
                     .filter(family -> family.countFamily() > familySize)
-                    .peek(System.out::println)
+                    .peek(family -> System.out.println(family.prettyFormat()))
                     .collect(Collectors.toList());
            return familiesBiggerThan;
         }
 
         public List<Family> getFamiliesLessThan (int familySize){
             System.out.printf("Families less then %d :\n", familySize);
-            List<Family> familiesLessThan = new ArrayList<>();
+            List<Family> familiesLessThan;
             familiesLessThan = getAllFamilies().stream()
                     .filter(family -> family.countFamily() < familySize)
-                    .peek(System.out::println)
+                    .peek(family -> System.out.println(family.prettyFormat()))
                     .collect(Collectors.toList());
             return familiesLessThan;
         }

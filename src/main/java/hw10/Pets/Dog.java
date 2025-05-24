@@ -46,11 +46,19 @@ public class Dog extends Pet implements Foul {
 
     @Override
     public String toString() {
-        return this.getSpecies() + "{" +
-                "nickname='" + super.getNickname() + '\'' +
+        return this.species + ":" +
+                " nickname='" + super.getNickname() + '\'' +
                 ", age=" + super.getAge() +
                 ", trickLevel=" + super.getTrickLevel() +
                 ", habits=" + super.getHabits() +
                 '}';
-    };
+    }
+
+    public String prettyFormat() {
+        return this.species + ":" +
+                " nickname='" + super.getNickname() + '\'' +
+                ", age=" + super.getAge() +
+                ", trickLevel=" + super.getTrickLevel() +
+                ", habits=" + super.getHabits();
+    }
 }

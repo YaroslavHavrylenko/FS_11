@@ -62,6 +62,10 @@ public abstract class Pet {
     }
     public abstract void respond();
 
+    public String prettyFormat() {
+        return "No information";
+    }
+
     @Override
     protected void finalize() {
         System.out.println("Object deleted - ".concat(this.toString()));

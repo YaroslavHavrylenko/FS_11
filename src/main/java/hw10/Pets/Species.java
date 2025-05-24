@@ -9,9 +9,15 @@ public enum Species {
 
     private final String species;
 
-    Species (String species) { this.species = (species == null) ? "Unknown" : species; }
+    Species (String species) {
+        this.species = (species == null) ? "Unknown" : species; }
 
     public String getSpecies() {
+        return species;
+    }
+
+    @Override
+    public String toString() {
         return species;
     }
 }

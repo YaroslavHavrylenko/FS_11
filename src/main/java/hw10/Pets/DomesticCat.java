@@ -53,4 +53,12 @@ public class DomesticCat extends Pet implements Foul {
                 ", habits=" + super.getHabits() +
                 '}';
     }
+
+    public String prettyFormat() {
+        return this.species + ":" +
+                " nickname='" + super.getNickname() + '\'' +
+                ", age=" + super.getAge() +
+                ", trickLevel=" + super.getTrickLevel() +
+                ", habits=" + super.getHabits();
+    }
 }

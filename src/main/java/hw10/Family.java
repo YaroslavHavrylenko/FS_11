@@ -96,6 +96,8 @@ public class Family {
                 ((children.isEmpty()) ? ",\n  children: No info about children" : ",\n  children:\n    " + children.stream()
                         .map(Human::prettyFormat)
                         .collect(Collectors.joining("\n    "))) +
-                ((pet == null) ? ",\n  pet: No pet at family" : ", pet: " + pet) ;
+                (pet == null ? ",\n  pet: No pet at family" : ",\n  pets:\n    " + pet.stream()
+                        .map(Pet::prettyFormat)
+                        .collect(Collectors.joining("\n    ")));
     }
 }

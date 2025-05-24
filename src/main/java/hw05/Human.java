@@ -113,7 +113,7 @@ public class Human {
                 ((iq != 0) ? ", iq=" + iq : "") +
                 ((family == null || family.getMother() == null) ? "" : ", mother = " + (family.getMother().getName() + " " + family.getMother().getSurname())) +
                 ((family == null || family.getFather() == null) ? "" : ", father=" + (family.getFather().getName() + " " + family.getFather().getSurname())) +
-                ((schedule == null || schedule.length == 0) ? "" : "schedule=" + Arrays.deepToString(schedule)) +
+                ((schedule == null || schedule.length == 0) ? "" : ", schedule=" + Arrays.deepToString(schedule)) +
                 '}';
     }
 
