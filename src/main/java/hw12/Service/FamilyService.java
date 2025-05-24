@@ -23,7 +23,7 @@ public class FamilyService {
             if (!getAllFamilies().isEmpty()){
                 System.out.println("List of families:");
                 for (int i = 0; service.getAllFamilies().size() > i; i++){
-                    System.out.print((i+1) + ") " + service.getAllFamilies().get(i));
+                    System.out.println((i+1) + ") " + service.getAllFamilies().get(i));
                 }
             } else {
                     System.out.println("List of families is empty");
@@ -96,8 +96,12 @@ public class FamilyService {
         public void deleteAllChildrenOlderThen (int age) {
             List<Family> families = service.getAllFamilies();
             for (Family family:families){
+                List<Human> childrenToRemove = new ArrayList<>();
                 for (Human child:family.getChildren()){
-                    if ((LocalDate.now().getYear() - child.getYear()) > age) family.deleteChild(child);
+                    if ((LocalDate.now().getYear() - child.getYear()) > age) childrenToRemove.add(child);
+                }
+                for (Human child : childrenToRemove) {
+                    family.deleteChild(child);
                 }
                 service.saveFamily(family);
             }
