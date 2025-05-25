@@ -223,7 +223,8 @@ public class Main {
                         Menu.showMenu();
                         break;
                     case "7":
-
+                        MenuSeven.delFamilyById();
+                        Menu.showMenu();
                         break;
                     case "8":
 
