@@ -192,9 +192,10 @@ public class Main {
         Menu.showMenu();
 
         do{
+            System.out.println("__________________________________");
             System.out.print("Будь-ласка виберіть пункт меню: ");
             menuChoice = scanner.nextLine();
-            try {
+//            try {
 //                int num = Integer.parseInt(String.valueOf(menuChoice));
                 switch (menuChoice.trim()){
                     case "1":
@@ -218,7 +219,10 @@ public class Main {
                         Menu.showMenu();
                         break;
                     case "6":
-
+//                        MenuSix.createMother();
+//                        MenuSix.createFather();
+                        MenuSix.createFamily();
+                        Menu.showMenu();
                         break;
                     case "7":
 
@@ -234,9 +238,9 @@ public class Main {
                     default:
                         System.out.println("Ви ввели невірний номер меню! Будь-ласка введіть уважно!");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Ведено не число");
-            }
+//            } catch (NumberFormatException e) {
+//                System.out.println("Ведено не число");
+//            }
         } while (!menuChoice.equalsIgnoreCase("exit"));
 
 
