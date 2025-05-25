@@ -1,19 +1,11 @@
 package hw10;
 
-import hw10.Controller.FamilyController;
-import hw10.HumanType.Man;
-import hw10.HumanType.Woman;
 import hw10.Menu.*;
-import hw10.Pets.Dog;
-import hw10.Pets.DomesticCat;
+import hw10.Menu.MenuEight.MenuEight;
 
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.Scanner;
 
-import static hw08.TransformTime.toMilliSec;
-import static hw10.Menu.MenuOne.runMenuOne;
+import static hw10.Menu.Menu.familyController;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
@@ -154,49 +146,47 @@ public class Main {
 //        familyController.deleteFamilyByIndex(0);
 //        familyController.deleteFamily(familyController.getFamilyById(0));
 
-        System.out.println("--------------- HW-10 ---------------");
-        long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
-        Woman mother = new Woman("Jane", "Karleone", motherBirthDay);
-        long fatherBirthDay = toMilliSec(LocalDate.of(1954,5,15));
-        Man father = new Man("Vito", "Karleone", fatherBirthDay);
-        long childBirthDay = toMilliSec(LocalDate.of(1977,12,23));
-        Man child = new Man("Michael", "Karleone", childBirthDay);
-
-        long mother1BirthDay = toMilliSec(LocalDate.of(1980,5,28));
-        Woman mother1 = new Woman("Alice", "Smith", mother1BirthDay);
-        long father1BirthDay = toMilliSec(LocalDate.of(1978,12,15));
-        Man father1 = new Man("Will", "Smith", father1BirthDay);
-
-        Dog dog = new Dog("Rock", 5, 75, new LinkedHashSet<>(Arrays.asList("eat", "drink", "sleep")));
-        DomesticCat cat = new DomesticCat("Kisa", 3, 50, new LinkedHashSet<>(Arrays.asList("eat", "walk", "foul")));
-
-
-        FamilyController familyController = new FamilyController();
-        familyController.createNewFamily(mother, father);
-        familyController.displayAllFamilies();
-        familyController.createNewFamily(mother1, father1);
-        familyController.bornChild(familyController.getFamilyById(1), "Elsa", "Erik");
-        long bornChildBirthDay = toMilliSec(LocalDate.of(2015,2,2));
-        familyController.getFamilyById(1).getChildren().get(0).setBirthDate(bornChildBirthDay);
-        familyController.displayAllFamilies();
-
-        familyController.adoptChild(familyController.getFamilyById(1), child);
-        familyController.addPet(1,dog);
-        familyController.addPet(1, cat);
-        familyController.displayAllFamilies();
-        familyController.getFamiliesBiggerThan(3);
-        familyController.getFamiliesLessThan(3);
-        familyController.deleteFamilyByIndex(0);
-        familyController.displayAllFamilies();
+//        System.out.println("--------------- HW-10 ---------------");
+//        long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
+//        Woman mother = new Woman("Jane", "Karleone", motherBirthDay);
+//        long fatherBirthDay = toMilliSec(LocalDate.of(1954,5,15));
+//        Man father = new Man("Vito", "Karleone", fatherBirthDay);
+//        long childBirthDay = toMilliSec(LocalDate.of(1977,12,23));
+//        Man child = new Man("Michael", "Karleone", childBirthDay);
+//
+//        long mother1BirthDay = toMilliSec(LocalDate.of(1980,5,28));
+//        Woman mother1 = new Woman("Alice", "Smith", mother1BirthDay);
+//        long father1BirthDay = toMilliSec(LocalDate.of(1978,12,15));
+//        Man father1 = new Man("Will", "Smith", father1BirthDay);
+//
+//        Dog dog = new Dog("Rock", 5, 75, new LinkedHashSet<>(Arrays.asList("eat", "drink", "sleep")));
+//        DomesticCat cat = new DomesticCat("Kisa", 3, 50, new LinkedHashSet<>(Arrays.asList("eat", "walk", "foul")));
+//
+//
+//        FamilyController familyController = new FamilyController();
+//        familyController.createNewFamily(mother, father);
+//        familyController.displayAllFamilies();
+//        familyController.createNewFamily(mother1, father1);
+//        familyController.bornChild(familyController.getFamilyById(1), "Elsa", "Erik");
+//        long bornChildBirthDay = toMilliSec(LocalDate.of(2015,2,2));
+//        familyController.getFamilyById(1).getChildren().get(0).setBirthDate(bornChildBirthDay);
+//        familyController.displayAllFamilies();
+//
+//        familyController.adoptChild(familyController.getFamilyById(1), child);
+//        familyController.addPet(1,dog);
+//        familyController.addPet(1, cat);
+//        familyController.displayAllFamilies();
+//        familyController.getFamiliesBiggerThan(3);
+//        familyController.getFamiliesLessThan(3);
+//        familyController.deleteFamilyByIndex(0);
+//        familyController.displayAllFamilies();
 
         Menu.showMenu();
 
         do{
-            System.out.println("__________________________________");
             System.out.print("Будь-ласка виберіть пункт меню: ");
             menuChoice = scanner.nextLine();
-//            try {
-//                int num = Integer.parseInt(String.valueOf(menuChoice));
+
                 switch (menuChoice.trim()){
                     case "1":
                         MenuOne.runMenuOne();
@@ -227,7 +217,13 @@ public class Main {
                         Menu.showMenu();
                         break;
                     case "8":
-
+                        if (familyController.getAllFamilies().isEmpty()) {
+                            System.out.println("У списку немає сімей для редагування. Необхідно спочатку створити сім'ю.");
+                            Menu.showMenu();
+                        } else {
+                            Menu.menuEditFamily();
+                            MenuEight.editFamilyByIndex();
+                        }
                         break;
                     case "9":
 

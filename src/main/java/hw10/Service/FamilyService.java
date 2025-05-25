@@ -8,12 +8,12 @@ import hw10.HumanType.Woman;
 import hw10.Pet;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static hw08.TransformTime.toLocalDate;
+import static hw08.TransformTime.toMilliSec;
 
 public class FamilyService {
     public CollectionFamilyDao service = new CollectionFamilyDao();
@@ -77,12 +77,14 @@ public class FamilyService {
             String childName = Math.random() < 0.5 ? girlName : boyName;
             Human child;
             if (childName.equals(boyName)) {
-                child = new Man();   // або new Man(name, surname, ...)
+                child = new Man();
             } else {
-                child = new Woman(); // або new Woman(name, surname, ...)
+                child = new Woman();
             }
             child.setFamily(family);
             child.setName(childName);
+            child.setBirthDate(toMilliSec(LocalDate.now()));
+            child.setIq(((int) (Math.random() * 150)));
             child.setSurname(family.getFather().getSurname());
             family.addChild(child);
             service.saveFamily(family);
@@ -109,7 +111,7 @@ public class FamilyService {
 
     public int count () {
             int quantityFamily = service.getAllFamilies().size();
-            System.out.println("The quantity of families is " + quantityFamily);
+//            System.out.println("The quantity of families is " + quantityFamily);
             return quantityFamily;
         }
 

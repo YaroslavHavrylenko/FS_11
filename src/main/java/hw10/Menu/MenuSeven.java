@@ -15,7 +15,7 @@ public class MenuSeven {
             } catch (NumberFormatException e) {
                 System.out.println("!!!Ви ввели не число!!!");
             }
-            if(numFamily <= 0 || numFamily  > quantityOfFamilies) System.out.printf("!!!Родина з порядковим номером %d відсутня в списку!!!\n", numFamily);
+            if (numFamily <= 0 || numFamily  > quantityOfFamilies) System.out.printf("!!!Родина з порядковим номером %d відсутня в списку!!!\n", numFamily);
         } while (!(numFamily > 0) || !(numFamily  <= quantityOfFamilies));
     }
 }
