@@ -219,8 +219,6 @@ public class Main {
                         Menu.showMenu();
                         break;
                     case "6":
-//                        MenuSix.createMother();
-//                        MenuSix.createFather();
                         MenuSix.createFamily();
                         Menu.showMenu();
                         break;
