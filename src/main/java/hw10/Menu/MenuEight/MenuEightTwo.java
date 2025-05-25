@@ -3,27 +3,46 @@ package hw10.Menu.MenuEight;
 import hw10.Human;
 import hw10.HumanType.Man;
 import hw10.HumanType.Woman;
+import hw10.Menu.Menu;
 
 import java.time.LocalDate;
 
 import static hw08.TransformTime.toMilliSec;
 import static hw10.Main.scanner;
+import static hw10.Menu.Menu.familyController;
 
 public class MenuEightTwo {
     public static void adoptChild () {
-
+        Menu.menuEditFamilyAdopt();
+        String adoptChildNum;
+        do {
+            System.out.print("Введіть порядковий номер меню всиновлення дитини: ");
+            adoptChildNum = scanner.nextLine();
+            switch (adoptChildNum.trim()){
+                case "1":
+                    // хлопчик
+                    child("хлопчика");
+                    Menu.menuEditFamily();
+                    break;
+                case "2":
+                    // дівчинка
+                    child("дівчинки");
+                    Menu.menuEditFamily();
+                    break;
+                case "3":
+                    // вихід в попереднє меню
+                    MenuEight.editFamilyByIndex();
+                    break;
+                default:
+                    System.out.println("!!!Пункт меню редагування родини введений невірно!!!");
+                    break;
+            }
+        } while (!adoptChildNum.equalsIgnoreCase("3"));
 
     }
-    public static Human girl () {
-        return child("дівчинки");
-    }
 
-    public static Human boy () {
-        return child("хлопчика");
-    }
-
-    static Human child (String childType) {
-        Human parent;
+    static void child (String childType) {
+        Human child;
 
         System.out.printf("Опис %s, що всиновлюється:\n", childType);
         System.out.printf("Введіть ім'я %s: ", childType);
@@ -72,8 +91,24 @@ public class MenuEightTwo {
         } while (!(iq > -1) || !(iq < 151));
         long parentBirthDay = toMilliSec(LocalDate.of(yearBirthDay,monthBirthDay,dayBirthDay));
         if (childType.equals("дівчинки")){
-            parent = new Woman(name, surname, parentBirthDay, iq);
-        } else {parent = new Man(name, surname, parentBirthDay, iq);}
-        return parent;
+            child = new Woman(name, surname, parentBirthDay, iq);
+        } else {child = new Man(name, surname, parentBirthDay, iq);}
+
+        int numFamily = 0;
+        int quantityFamily = familyController.count();
+        do {
+            try {
+                System.out.print("Введіть порядковий номер сім'ї, яка приймає дитину: ");
+                numFamily = Integer.parseInt(scanner.nextLine());
+                if (numFamily <= 0 || numFamily > quantityFamily) {
+                    System.out.printf("Сім'ї з номером %d не існує!\n", numFamily);
+                } else {
+                    familyController.adoptChild(familyController.getFamilyById(numFamily - 1), child);
+                    System.out.println(familyController.getFamilyById(numFamily - 1).prettyFormat());
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Некоректний формат номера сім’ї");
+            }
+        } while (!(numFamily > 0) || !(numFamily <= quantityFamily));
     }
 }

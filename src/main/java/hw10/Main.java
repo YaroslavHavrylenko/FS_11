@@ -6,6 +6,7 @@ import hw10.Menu.MenuEight.MenuEight;
 import java.util.Scanner;
 
 import static hw10.Menu.Menu.familyController;
+import static hw10.Menu.Menu.showMenu;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
@@ -221,12 +222,12 @@ public class Main {
                             System.out.println("У списку немає сімей для редагування. Необхідно спочатку створити сім'ю.");
                             Menu.showMenu();
                         } else {
-                            Menu.menuEditFamily();
                             MenuEight.editFamilyByIndex();
                         }
                         break;
                     case "9":
-
+                        MenuNine.delChildrenOlderThen();
+                        Menu.showMenu();
                         break;
                     case "exit":
                         break;

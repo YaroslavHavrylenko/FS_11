@@ -1,5 +1,6 @@
 package hw10.Controller;
 
+import hw10.Exeption.FamilyOverflowException;
 import hw10.Family;
 import hw10.Human;
 import hw10.Pet;
@@ -43,12 +44,20 @@ public class FamilyController {
         return familyService.deleteFamilyByIndex(index);
     }
 
-    public Family bornChild (Family family, String girlName, String boyName) {
-        return familyService.bornChild(family, girlName, boyName);
+    public void bornChild (Family family, String girlName, String boyName) {
+        try {
+            familyService.bornChild(family, girlName, boyName);
+        } catch (FamilyOverflowException e) {
+            System.out.println("Неможливо усиновити дитину: " + e.getMessage());
+        }
     }
 
-    public Family adoptChild (Family family, Human child){
-        return familyService.adoptChild(family, child);
+    public void adoptChild (Family family, Human child){
+        try {
+            familyService.adoptChild(family, child);
+        } catch (FamilyOverflowException e){
+            System.out.println("Неможливо усиновити дитину: " + e.getMessage());
+        }
     }
 
     public void deleteAllChildrenOlderThen (int age) {

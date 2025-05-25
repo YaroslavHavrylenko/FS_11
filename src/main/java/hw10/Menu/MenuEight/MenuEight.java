@@ -7,10 +7,10 @@ import static hw10.Menu.Menu.familyController;
 
 public class MenuEight {
     public static void editFamilyByIndex () {
+        Menu.menuEditFamily();
 
         String editFamilyNum = "";
         do {
-//            try {
                 System.out.print("Введіть порядковий номер меню редагування родини: ");
                 editFamilyNum = scanner.nextLine();
                 switch (editFamilyNum.trim()){
@@ -27,10 +27,8 @@ public class MenuEight {
                         break;
                     default:
                         System.out.println("!!!Пункт меню редагування родини введений невірно!!!");
+                        break;
                 }
-//            } catch (NumberFormatException e) {
-//                System.out.println("!!!Ви ввели не число!!!");
-//            }
         } while (!editFamilyNum.equalsIgnoreCase("3"));
     }
 }

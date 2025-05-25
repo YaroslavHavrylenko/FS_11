@@ -1,6 +1,7 @@
 package hw10.Service;
 
 import hw10.DAO.CollectionFamilyDao;
+import hw10.Exeption.FamilyOverflowException;
 import hw10.Family;
 import hw10.Human;
 import hw10.HumanType.Man;
@@ -17,6 +18,7 @@ import static hw08.TransformTime.toMilliSec;
 
 public class FamilyService {
     public CollectionFamilyDao service = new CollectionFamilyDao();
+    private static final int MAX_FAMILY_SIZE = 5;
 
         public List<Family> getAllFamilies() {
             return service.getAllFamilies();
@@ -74,6 +76,10 @@ public class FamilyService {
         }
 
         public Family bornChild (Family family, String girlName, String boyName) {
+            if (family.countFamily() >= MAX_FAMILY_SIZE) {
+                throw new FamilyOverflowException("Сім’я не може мати більше ніж " + MAX_FAMILY_SIZE + " осіб.");
+            }
+
             String childName = Math.random() < 0.5 ? girlName : boyName;
             Human child;
             if (childName.equals(boyName)) {
@@ -92,6 +98,10 @@ public class FamilyService {
         }
 
         public Family adoptChild (Family family, Human child){
+            if (family.countFamily() >= MAX_FAMILY_SIZE) {
+                throw new FamilyOverflowException("Сім’я не може мати більше ніж " + MAX_FAMILY_SIZE + " осіб.");
+            }
+
             family.addChild(child);
             child.setFamily(family);
             service.saveFamily(family);
