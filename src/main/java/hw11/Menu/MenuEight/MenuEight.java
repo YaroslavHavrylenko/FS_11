@@ -1,8 +1,8 @@
-package hw10.Menu.MenuEight;
+package hw11.Menu.MenuEight;
 
-import hw10.Menu.Menu;
+import hw11.Menu.Menu;
 
-import static hw10.Main.scanner;
+import static hw11.Main.scanner;
 
 public class MenuEight {
     public static void editFamilyByIndex () {

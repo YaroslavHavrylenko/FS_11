@@ -1,11 +1,11 @@
-package hw10;
+package hw11;
 
-import hw10.Menu.*;
-import hw10.Menu.MenuEight.MenuEight;
+import hw11.Menu.*;
+import hw11.Menu.MenuEight.MenuEight;
 
 import java.util.Scanner;
 
-import static hw10.Menu.Menu.familyController;
+import static hw11.Menu.Menu.familyController;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);

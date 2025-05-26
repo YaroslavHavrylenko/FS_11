@@ -1,12 +1,10 @@
-package hw10.Controller;
+package hw11.Controller;
 
-import hw10.Exeption.FamilyOverflowException;
-import hw10.Family;
-import hw10.Human;
-import hw10.HumanType.Man;
-import hw10.HumanType.Woman;
-import hw10.Pet;
-import hw10.Service.FamilyService;
+import hw11.Exeption.FamilyOverflowException;
+import hw11.Family;
+import hw11.Human;
+import hw11.Pet;
+import hw11.Service.FamilyService;
 
 import java.util.HashSet;
 import java.util.List;
@@ -38,7 +36,7 @@ public class FamilyController {
         return familyService.countFamiliesWithMemberNumber(memberNumber);
     }
 
-    public void createNewFamily (Woman woman, Man men) {
+    public void createNewFamily (Human woman, Human men) {
         familyService.createNewFamily(woman, men);
     }
 

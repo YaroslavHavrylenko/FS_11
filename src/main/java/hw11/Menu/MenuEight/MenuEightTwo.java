@@ -1,15 +1,15 @@
-package hw10.Menu.MenuEight;
+package hw11.Menu.MenuEight;
 
-import hw10.Human;
-import hw10.HumanType.Man;
-import hw10.HumanType.Woman;
-import hw10.Menu.Menu;
+import hw11.Human;
+import hw11.HumanType.Man;
+import hw11.HumanType.Woman;
+import hw11.Menu.Menu;
 
 import java.time.LocalDate;
 
-import static hw10.TransformTime.toMilliSec;
-import static hw10.Main.scanner;
-import static hw10.Menu.Menu.familyController;
+import static hw11.TransformTime.toMilliSec;
+import static hw11.Main.scanner;
+import static hw11.Menu.Menu.familyController;
 
 public class MenuEightTwo {
     public static void adoptChild () {

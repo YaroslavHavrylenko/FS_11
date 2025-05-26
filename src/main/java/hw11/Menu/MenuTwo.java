@@ -1,6 +1,6 @@
-package hw10.Menu;
+package hw11.Menu;
 
-import static hw10.Menu.Menu.familyController;
+import static hw11.Menu.Menu.familyController;
 
 public class MenuTwo {
     public static void runMenuTwo () {

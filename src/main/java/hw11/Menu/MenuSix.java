@@ -1,22 +1,22 @@
-package hw10.Menu;
+package hw11.Menu;
 
-import hw10.Human;
-import hw10.HumanType.Man;
-import hw10.HumanType.Woman;
+import hw11.Human;
+import hw11.HumanType.Man;
+import hw11.HumanType.Woman;
 
 import java.time.LocalDate;
 
-import static hw08.TransformTime.toMilliSec;
-import static hw10.Main.scanner;
-import static hw10.Menu.Menu.familyController;
+import static hw11.TransformTime.toMilliSec;
+import static hw11.Main.scanner;
+import static hw11.Menu.Menu.familyController;
 
 public class MenuSix {
-    public static Woman createMother () {
-        return (Woman) parent("матері");
+    public static Human createMother () {
+        return parent("матері");
     }
 
-    public static Man createFather () {
-        return (Man) parent("батька");
+    public static Human createFather () {
+        return parent("батька");
     }
 
     static Human parent (String parentType) {
