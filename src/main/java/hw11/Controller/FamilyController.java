@@ -87,4 +87,8 @@ public class FamilyController {
     public Boolean deleteFamily(Family family) {
         return familyService.deleteFamily(family);
     }
+
+    public void loadData(List<Family> families) {
+        familyService.loadData(families);
+    }
 }

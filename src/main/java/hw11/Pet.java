@@ -1,8 +1,9 @@
 package hw11;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 
-public abstract class Pet {
+public abstract class Pet implements Serializable {
     private String nickname;
     private int age;
     private int trickLevel;

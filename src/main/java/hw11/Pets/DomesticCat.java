@@ -2,9 +2,10 @@ package hw11.Pets;
 
 import hw11.Pet;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 
-public class DomesticCat extends Pet implements Foul {
+public class DomesticCat extends Pet implements Foul, Serializable {
     private Species species;
 
     public DomesticCat(String nickname) {

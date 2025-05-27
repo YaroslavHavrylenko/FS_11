@@ -42,4 +42,8 @@ public class CollectionFamilyDao implements FamilyDao {
             }
         } else familyList.add(family);
     }
+
+    public void loadData(List<Family> families) {
+        this.familyList = families;
+    }
 }

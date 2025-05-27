@@ -5,9 +5,10 @@ import hw11.Human;
 import hw11.Pet;
 import hw11.Task;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public final class Woman extends Human {
+public final class Woman extends Human implements Serializable {
     public Woman (String name, String surname, long birthDate ) {
         super(name, surname, birthDate );
     }

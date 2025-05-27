@@ -2,9 +2,10 @@ package hw11.Pets;
 
 import hw11.Pet;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 
-public class Fish extends Pet {
+public class Fish extends Pet implements Serializable {
     private Species species;
 
 

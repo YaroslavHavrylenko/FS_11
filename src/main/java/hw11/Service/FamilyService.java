@@ -147,7 +147,8 @@ public class FamilyService {
             return service.deleteFamily(family);
         }
 
-        public void loadData (List<Family> famolies) {
 
+        public void loadData(List<Family> families) {
+        this.service.loadData(families);
         }
 }

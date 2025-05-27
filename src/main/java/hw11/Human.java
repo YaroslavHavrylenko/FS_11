@@ -2,6 +2,7 @@ package hw11;
 
 import hw11.HumanType.Man;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.HashMap;
@@ -9,7 +10,7 @@ import java.util.Objects;
 
 import static hw08.TransformTime.*;
 
-public abstract class Human {
+public abstract class Human implements Serializable {
     private String name;
     private String surname;
     private long birthDate ;

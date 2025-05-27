@@ -3,6 +3,7 @@ package hw11;
 import hw11.Menu.*;
 import hw11.Menu.MenuEight.MenuEight;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import static hw11.Menu.Menu.familyController;
@@ -11,7 +12,7 @@ public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static String menuChoice;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        long motherBirthDay = toMilliSec(LocalDate.of(1956,2,28));
 //        Woman mother = new Woman("Jane", "Karleone", motherBirthDay);
 //        long fatherBirthDay = toMilliSec(LocalDate.of(1954,5,15));
