@@ -6,11 +6,11 @@ import static hw11.Main.scanner;
 
 public class MenuEight {
     public static void editFamilyByIndex () {
-        Menu.menuEditFamily();
 
         String editFamilyNum = "";
         do {
-                System.out.print("Введіть порядковий номер меню редагування родини: ");
+            Menu.menuEditFamily();
+            System.out.print("Введіть порядковий номер меню редагування родини: ");
                 editFamilyNum = scanner.nextLine();
                 switch (editFamilyNum.trim()){
                     case "1":

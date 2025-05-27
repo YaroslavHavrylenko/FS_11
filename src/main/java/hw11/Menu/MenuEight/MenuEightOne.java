@@ -1,5 +1,7 @@
 package hw11.Menu.MenuEight;
 
+import hw11.FileManager;
+
 import static hw11.Main.scanner;
 import static hw11.Menu.Menu.familyController;
 
@@ -26,5 +28,6 @@ public class MenuEightOne {
                 System.out.println("Некоректний формат номера сім’ї");
             }
         } while (!(numFamily > 0) || !(numFamily <= quantityFamily));
+        FileManager.saveFamilies(familyController.getAllFamilies());
     }
 }

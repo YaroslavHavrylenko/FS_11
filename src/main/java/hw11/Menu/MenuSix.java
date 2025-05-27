@@ -1,5 +1,6 @@
 package hw11.Menu;
 
+import hw11.FileManager;
 import hw11.Human;
 import hw11.HumanType.Man;
 import hw11.HumanType.Woman;
@@ -76,5 +77,7 @@ public class MenuSix {
 
     public static void createFamily(){
         familyController.createNewFamily(createMother(), createFather());
+        System.out.println("Нову сім'ю додано до списку сімей.");
+        FileManager.saveFamilies(familyController.getAllFamilies());
     }
 }

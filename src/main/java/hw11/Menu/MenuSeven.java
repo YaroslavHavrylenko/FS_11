@@ -1,5 +1,7 @@
 package hw11.Menu;
 
+import hw11.FileManager;
+
 import static hw11.Main.scanner;
 import static hw11.Menu.Menu.familyController;
 
@@ -17,5 +19,8 @@ public class MenuSeven {
             }
             if (numFamily <= 0 || numFamily  > quantityOfFamilies) System.out.printf("!!!Родина з порядковим номером %d відсутня в списку!!!\n", numFamily);
         } while (!(numFamily > 0) || !(numFamily  <= quantityOfFamilies));
+
+        System.out.printf("Сім'я з номером %d видалена зі списку сімей\n", numFamily);
+        FileManager.saveFamilies(familyController.getAllFamilies());
     }
 }

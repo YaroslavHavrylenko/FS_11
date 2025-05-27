@@ -78,23 +78,24 @@ public class FamilyService {
         public Family bornChild (Family family, String girlName, String boyName) {
             if (family.countFamily() >= MAX_FAMILY_SIZE) {
                 throw new FamilyOverflowException("Сім’я не може мати більше ніж " + MAX_FAMILY_SIZE + " осіб.");
-            }
-
-            String childName = Math.random() < 0.5 ? girlName : boyName;
-            Human child;
-            if (childName.equals(boyName)) {
-                child = new Man();
             } else {
-                child = new Woman();
+                String childName = Math.random() < 0.5 ? girlName : boyName;
+                Human child;
+                if (childName.equals(boyName)) {
+                    child = new Man();
+                } else {
+                    child = new Woman();
+                }
+                child.setFamily(family);
+                child.setName(childName);
+                child.setBirthDate(toMilliSec(LocalDate.now()));
+                child.setIq(((int) (Math.random() * 150)));
+                child.setSurname(family.getFather().getSurname());
+                family.addChild(child);
+                System.out.printf("Вітаємо! В сім'ї %s народилася дитина!\n", family.getFather().getSurname());
+                service.saveFamily(family);
+                return family;
             }
-            child.setFamily(family);
-            child.setName(childName);
-            child.setBirthDate(toMilliSec(LocalDate.now()));
-            child.setIq(((int) (Math.random() * 150)));
-            child.setSurname(family.getFather().getSurname());
-            family.addChild(child);
-            service.saveFamily(family);
-            return family;
         }
 
         public Family adoptChild (Family family, Human child){
@@ -104,6 +105,7 @@ public class FamilyService {
 
             family.addChild(child);
             child.setFamily(family);
+            System.out.printf("Вітаємо! Сім'я %s всиновила дитину!\n", family.getFather().getSurname());
             service.saveFamily(family);
             return family;
         }

@@ -10,7 +10,7 @@ import static hw11.Menu.Menu.familyController;
 public class MenuTwo {
     public static void runMenuTwo () {
         List<Family> allFamilies = familyController.getAllFamilies();
-        FileManager.saveFamilies(allFamilies);
-//        familyController.displayAllFamilies();
+//        FileManager.saveFamilies(allFamilies);
+        familyController.displayAllFamilies();
     }
 }
